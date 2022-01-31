@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-tap-highlight-color: transparent;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;   
+}
+#root{
+    height: 100%;
+}
+.root-container{
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+}
+
+:root{
+    --bg-primary   : rgb(245, 245, 245); 
+    --bg-secondary : rgb(250, 250, 250); 
+    --bg-card      : rgb(248, 248, 248);
+}
+
+.header--container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+
+    position: relative;
+    
+    box-shadow: 0 1px .1rem rgb(131, 130, 130);
+    border-bottom: 1px solid gray;
+    width: 100%;
+    background-color: var(--bg-primary);
+
+    position: sticky;
+    top: 0;
+}
+
+.header--container > .header-content{
+    padding: .45rem;
+}
+
+.header--container .header--logo{
+    /* flex-grow: 1.5; */
+    text-align: center;
+    flex: .5;
+    color: deeppink;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+}
+.header--container .header--search{
+    max-width: 650px;
+    flex: 1;
+}
+
+.header--search input{
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+    padding: .4rem .4rem;
+    font-size: 1.1rem;
+    width: 100%;
+    border: 1px solid deeppink;
+    background-color: var(--bg-secondary);
+}
+
+.header--search input:focus{
+    outline: none;
+    box-shadow: 0 0 .5rem deeppink;
+    background-color: white;
+}
+
+button[type="add"]{
+    width:  3rem;
+    height: 3rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #ff69b4;
+    border: 1px solid #ff1493;
+    font-size: 1.2rem;
+    user-select: none;
+    cursor: pointer;
+    color: white;
+    margin: 1rem;
+
+    position: fixed;
+    bottom: 20vh;
+    margin-left: 2rem;
+}
+.prompt-box-container{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    width: 100vw;
+}
+.header--prompt-box{
+    margin: auto;
+    
+    width: 100%;
+    max-width: 550px;
+    z-index: 9999;
+    background-color: white;
+    box-shadow: 0 1px .3rem black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 130px;
+    border-radius: 0 0 15% 15%;
+    -webkit-border-radius: 0 0 15% 15%;
+    -moz-border-radius: 0 0 15% 15%;
+    -ms-border-radius: 0 0 15% 15%;
+    -o-border-radius: 0 0 15% 15%;
+    border: 1px inset deeppink;
+    border-top: none;
+}
+/* .header--prompt-box ~ */
+.prompt-box--buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.prompt-box--msg{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.prompt-box--buttons button{
+    padding: .2rem 1rem;
+    background-color: hotpink;
+    border: 1px solid deeppink;
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+    -ms-border-radius: .2rem;
+    -o-border-radius: .2rem;
+    cursor: pointer;
+    position: relative;
+}
+.prompt-box--buttons button:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+button.button-yes:hover{
+    content: '';
+}
+button.button-yes:hover:before{
+    content: '✔';
+    position: absolute;
+    top: 0;
+    right: .2rem;
+}
+button.button-no{
+    background-color: whitesmoke;
+}
+button.button-no:hover:before{
+    content: '❌';
+    font-size: .65rem;
+    position: absolute;
+    right: .2rem;
+}
+
+@media screen and (max-width : 600px) {
+    button[type="add"]{
+        position: fixed;
+        top: 80%;
+        right: 1rem;
+        margin: 0;
+    }
+}

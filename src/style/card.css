@@ -1,0 +1,89 @@
+.card--main--container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    overflow: scroll;
+    z-index: -1;
+}
+
+.card--container{
+    flex: 1 1 400px;
+    max-width: 400px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: .35rem;
+    height: 150px;
+    background-color: var(--bg-card);
+    
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    
+    margin: .5rem;
+    box-shadow: 0 0 .4rem rgba(0,0,0,.6);
+}
+
+/* .card--container:hover{
+    transform: scale(1.018);
+    -webkit-transform: scale(1.018);
+    -moz-transform: scale(1.018);
+    -ms-transform: scale(1.018);
+    -o-transform: scale(1.018);
+} */
+
+.card--head{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card--head .card--date-time{
+    flex: 1 1 150px;
+    text-align: right;
+    font-size: .6rem;
+    color: grey;
+    font-family: monospace !important;
+}
+.card--head .card--title{
+    max-width: 220px;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.card--container .card--description{
+    justify-self: center;
+    overflow: hidden;
+    word-break: break-all;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card--delete{
+    outline: none;
+    border: none;
+    margin: 0 .25rem;
+    font-size: .52rem;
+}
+
+.card--delete:hover{
+    cursor: pointer;
+    background-color: rgb(207, 207, 207);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
